@@ -1,8 +1,100 @@
 body * {
-  margin: 0;
   font-family: 'Open Sans', sans-serif;
+}
+
+body, p, section, article, header, h1, h2, h3, h4, h5 {  
+  color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+  letter-spacing: -1px;
+}
+
+@media only screen and (min-width: 768px) {
+img.me {
+  margin-top: 20px;
+}
+p {
+  font-size: 1.2em;
+}
+.tags {
+  position: relative;
+  top: 10px;
+}
+.tags li {
+  float: left;
+  margin: 0px 10px;
+}
+.tags li button {
+  background-color: #ff6600;
+  border: none;
+}
+
+#navigation.tags li button a {
+  color : #ddd;
+}
+.logo {
+  position:relative;
+  vertical-align: center;
+  margin-left: 30px;
 }
 
 .index {
   font-weight: 300;
+}
+
+.smack {
+  background-color: #fffddd;
+}
+.boxedin {
+  padding: 10px 20px 20px;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.greyborder {
+  border: 1px solid #eeeeee;
+}
+.light-orange {
+  background-color: #ffaa44;
+}
+.orange {
+  background-color: #ff5500;
+}
+#home .post:first-child {
+  margin-top: 20px;
+}
+
+#home .post {
+  margin-bottom: 50px;
+}
+
+#home footer {
+  padding: 5px;
+  display: block;
+}
+
+#navigation button, #navigation .button {
+  border-style: none;
+  border-width: 1px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: normal;
+  /*margin: 0 0 1.25em;*/
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  /*padding-top: 0.75em;*/
+  /*padding-right: 1.5em;*/
+  /*padding-bottom: 0.8125em;*/
+  /*padding-left: 1.5em;*/
+  /*font-size: 1em;*/
+  background-color: #ff6600;
+  border-color: #ff5500;
+  color: #ffffff;
+}
+
+/* end of Media block*/
 }

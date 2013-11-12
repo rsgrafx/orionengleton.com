@@ -1,0 +1,36 @@
+<section id='home' class='small-12 large-9 last smack columns' ng-controller='HomeController'>
+
+  
+  <h1>{{ mainTitle }}</h1>
+
+  <div class='post' ng-repeat=' entry in myposts'>
+  <header>
+    <h3>{{ entry.title }}</h3>
+  </header> 
+  <article>
+    <p>
+      {{ entry.html_text }}
+      <ul class='large-block-grid-2 small-block-grid-2'>
+        <li ng-repeat='photo in entry.post_images'>
+           <img src="http://localhost:3000{{ photo.attachment.url }}" />
+        </li>
+      </ul>
+    </p>
+  </article>
+  <footer class='light-orange'>
+    Submitted Today.
+  </footer>
+  </div>
+
+  <!-- <div class='post'>
+  <header>
+    <h3>Where do I Go?.</h3>
+  </header> 
+  <article>
+    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances..</p>
+  </article>
+  <footer class='light-orange'>
+    Submitted Today.
+  </footer>
+  </div> -->
+</section>

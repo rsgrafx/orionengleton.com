@@ -1,0 +1,1 @@
+var orionApp = angular.module('OrionApplication', []);

@@ -1,24 +1,58 @@
 <html ng-app="OrionApplication">
 <head>
   
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
-  <script src="index.js"></script>
-
   <title>Learning to Dream in Color and Code. | Orion Engleton</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
   
   <meta name="description=" content="Orion Engleton, Developer and Designer, World Traveler - Developing good life habits and exploring my potential. These are my ramblings.">
-  <link rel="stylesheet" type="text/css" href="assets/normalize.css">
-  <link rel="stylesheet" type="text/css" href="assets/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/foundation.min.css">
 
   <link rel="stylesheet" type="text/css" href="index.css">
-  
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="orionengleton">
+  <meta name="twitter:title" content="Belizean, Fijian, World Traveler, Rails Dev, iOS novice.">
+  <meta name="twitter:description" content="Just get up and go">
+  <meta name="twitter:creator" content="">
+  <meta name="twitter:image:src" content="">
+  <meta name="twitter:domain" content="orionengleton.com">
+
 </head>
 <body>
-  <div ng-controller="BaseCtrl" class='base index'>
-    <h1>{{ title }}</h1>
-    <p>Hello Bro</p>
+  <div class='top-bar hide-for-small orange'>
+    <div class='tags large-10 push-4' id="navigation" ng-controller="BlogController"> 
+      <ul>
+        <li ng-repeat="tag in blogTags"> <a href="#{{tag.name}}"><button class='tiny round'>#{{tag.name}}</button></a></li>
+      </ul>
+    </div>
   </div>
+    <div class='row'>
+     <div ng-controller="BaseCtrl" class='small-12 large-3 columns greyborder boxedin'>
+        <div class='logo'>
+          <a href="/"><img src="images/orion-logo.png" alt='Orion Engleton'></a>
+        </div>
+        <h2>{{ title }}</h2>
+      <ul class='side-nav'>
+        <li><a href="/about">About</a></li>
+        <li><a href="/tools">Tools I Use</a></li>
+        <li><a href="/blog">What I've Done</a></li>
+      </ul>
+    </div>
+    <ng-view></ng-view>  
+  </div>
+
+  <footer class='row'>
+    <div class='boxedin'>&copy; 2013 Orion Engleton</div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+  <script src="app_setup.js"></script>
+  <script src="index.js"></script>
+  <script src="controllers/blog.js"></script>
 
 </body>
 </html>
