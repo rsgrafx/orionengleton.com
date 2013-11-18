@@ -16,8 +16,16 @@ orionApp.config(['$routeProvider', '$locationProvider', '$httpProvider', functio
 orionApp.controller('HomeController', ['$scope', '$http', function HomeController($scope, $http) {
   // scope specific stuff here.
   $scope.mainTitle='These are my posts';
+
+window.set_base_url = function() {
+    if (window.location.origin == 'http://localhost:8000') {
+      return 'http://localhost:3000'
+    } else {
+      return 'http://test.orionengleton.com'
+    }
+  }
   
-  $http({method: 'GET', url: 'http://test.orionengleton.com/home/index'}).
+  $http({method: 'GET', url:  set_base_url() + '/home/index'}).
       success( function(response, status, headers, config) {
         $scope.myposts = response;
         
