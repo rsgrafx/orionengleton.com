@@ -17,10 +17,10 @@ orionApp.controller('HomeController', ['$scope', '$http', function HomeControlle
   // scope specific stuff here.
   $scope.mainTitle='These are my posts';
   
-  $http({method: 'GET', url: 'http://localhost:3000/home/index'}).
+  $http({method: 'GET', url: 'http://test.orionengleton.com/home/index'}).
       success( function(response, status, headers, config) {
         $scope.myposts = response;
-        console.log(response.data);
+        
       // when the response is available
     }).
     error(function(data, status, headers, config) {
@@ -28,6 +28,15 @@ orionApp.controller('HomeController', ['$scope', '$http', function HomeControlle
    });
 
 }])
+
+orionApp.directive('postDetails', function() {
+  return {
+    restrict: 'A',
+    scope: {
+      postdetails: '=details'
+    }
+  }
+});
 
 orionApp.controller('ToolsController', ['$scope', '$http', function ToolsController($scope, $http) {
   $scope.pagetitle = "What I love to work with.";
