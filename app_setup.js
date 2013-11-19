@@ -7,7 +7,7 @@ window.set_base_url = function() {
 }
 
 // Angular App.
-var orionApp = angular.module('OrionApplication', []);
+var orionApp = angular.module('OrionApplication', ['truncate']);
 
 orionApp.config(['$locationProvider', '$httpProvider', function( $locationProvider, $httpProvider) {
   // Set the location provider enable base urls.
