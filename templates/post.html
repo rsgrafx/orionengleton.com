@@ -1,4 +1,5 @@
-<div ng-controller='ShowPostController'>
-  <p ng-bind-html-unsafe="blogPost.html_body">
-  </p>
+<div ng-controller='ShowPostController' id='post-body'>
+  <article>
+    <div ng-bind-html-unsafe="blogPost.html_body"></div>
+  </article>
 </div>
