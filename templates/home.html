@@ -6,7 +6,7 @@
   </header> 
   <article>
     <div>
-      <p ng-bind-html-unsafe="entry.html_body | words:20:ignoreSpaces"></p>
+      <p ng-bind-html-unsafe="entry.html_body | words:40:ignoreSpaces"></p>
       <ul class='large-block-grid-2 small-block-grid-2'>
         <li ng-repeat='photo in entry.post_images'>
            <img src="{{photo.attachment.url}}" />
