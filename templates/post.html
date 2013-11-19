@@ -1,5 +1,12 @@
 <div ng-controller='ShowPostController' id='post-body'>
   <article>
+    <header>
+      <h2>{{ blogPost.title}}</h2>
+    </header>
     <div ng-bind-html-unsafe="blogPost.html_body"></div>
+
+    <div ng-repeat='img in blogPost.post_images' class='large-5 small-10'>
+      <img ng-src="{{img.attachment.url}}" />
+    </div>
   </article>
 </div>
