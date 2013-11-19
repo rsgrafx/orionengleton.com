@@ -76,7 +76,7 @@ p {
 
 #post-body article {
   padding: 10px;
-  display: inline-block;
+  display: block;
 }
 
 #navigation button, #navigation .button {
