@@ -1,6 +1,7 @@
 <section id='home' ng-controller='HomeController'>
   <div class='post' ng-repeat=' entry in myposts'>
   <header>
+    <small>{{ entry.created_at }}</small>
     <h3>{{ entry.title }}</h3>
   </header> 
   <article>
@@ -13,9 +14,9 @@
       </ul>
     </div>
   </article>
-  <footer class='highlight'>
-    {{ entry.created_at }}  
-    <a ng-click='viewPost(entry.id)' > Read More </a>
+  <footer>
+    <a ng-click='viewPost(entry.id)' class='tiny button round'> Read More </a>
   </footer>
+  <hr>
   </div>
 </section>

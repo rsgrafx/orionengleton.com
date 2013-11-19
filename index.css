@@ -11,6 +11,7 @@ h1, h2, h3, h4, h5 {
 }
 
 @media only screen and (min-width: 768px) {
+
 img.me {
   margin-top: 20px;
 }
@@ -69,14 +70,29 @@ p {
   margin-bottom: 50px;
 }
 
+#home header small {
+  float: right;
+}
 #home footer {
   padding: 5px;
   display: block;
 }
 
+#home footer a {
+  float: right;
+}
+
 #post-body article {
   padding: 10px;
   display: block;
+}
+
+hr {
+  border: solid #dddddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.25em 0 1.1875em;
+  height: 0;
 }
 
 #navigation button, #navigation .button {
