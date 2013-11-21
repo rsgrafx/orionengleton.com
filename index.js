@@ -1,7 +1,8 @@
 orionApp.controller('HomeController', ['$scope', '$location', '$http', function HomeController($scope, $location, $http) {
-  // scope specific stuff here.
-  $scope.mainTitle='These are my posts';
   
+  // scope specific stuff here.  
+  // $sceProvider.enabled(false);
+
   $http({method: 'GET', url:  set_base_url() + '/home/index'}).
       success( function(response, status, headers, config) {
         $scope.myposts = response;
@@ -17,12 +18,12 @@ orionApp.controller('HomeController', ['$scope', '$location', '$http', function 
 
 }])
 
-orionApp.directive('postDetails', function() {
+orionApp.directive('itemlocation', function() {
   return {
-    restrict: 'A',
-    scope: {
-      postdetails: '=details'
-    }
+    restrict: 'AE',
+    scope: false,
+    priority: 1,
+    template: '<div> Original Item location directive. </div>'
   }
 });
 

@@ -14,21 +14,46 @@ orionApp.controller('BlogController', ['$scope', function BlogController($scope)
 
 }]);
 
+orionApp.directive('compile', ['$compile', function($compile) {
+    
+    return function(scope, element, attrs) {
+      scope.$watch(
+        function(scope) {
+          // watch the 'compile' expression for changes
+          // return scope.$eval(attrs.myCompileUnsafe);
+          return scope.$eval(attrs.compile);
+        },
+        function(value) {
+          // when the 'compile' expression changes
+          // assign it into the current DOM element
+          element.html(value);
 
-orionApp.controller('ShowPostController', ['$scope', '$location', '$http' ,'$routeParams', function ShowPostController($scope, $location, $http, $routeParams) {
+          // compile the new DOM and link it to the current
+          // scope.
+          // NOTE: we only compile .childNodes so that
+          // we don't get into infinite loop compiling ourselves
+          $compile(element.contents())(scope);
+        }
+      );
+    };
+  }]);
+
+orionApp.controller('ShowPostController', ['$scope', '$compile', '$location', '$http', '$routeParams',  
+                    function ShowPostController($scope, $compile, $location, $http, $routeParams) {
   
   $scope.title = 'THIS IS THE ITEM!';
   $scope.post_id = $routeParams.postId;
   $scope.$location = $location;
-  console.log($scope.post_id)
   
-  // $scope.getPost = function(_id) {
-    $http.get( set_base_url() + '/show/' + $scope.post_id ).success(function(data) {
-      $scope.blogPost = data;
-      console.log($scope.blogPost);
-    })    
+  $http.get( set_base_url() + '/show/' + $scope.post_id ).success(function(data) {
+    $scope.blogPost = data;
+    $scope.body_of_post = data.html_body;
+  })
 
-  $scope.templateUrl = '/templates/post.html'
-  // }
+  $scope
+
+  $scope.trustDataWithDirectives = function() {
+    // return $sce.trustAsHtml($scope.body_of_post)
+  }
 
 }])

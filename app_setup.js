@@ -6,12 +6,18 @@ window.set_base_url = function() {
   }
 }
 
+// DO NOT UPGRADE TO * ANGULAR 1.2 UNTIL YOU UNDERSTANd what the hell your doing...
 // Angular App.
-var orionApp = angular.module('OrionApplication', ['truncate']);
+// var orionApp = angular.module('OrionApplication', ['ngRoute','ngSanitize', 'truncate']);
 
-orionApp.config(['$locationProvider', '$httpProvider', function( $locationProvider, $httpProvider) {
-  // Set the location provider enable base urls.
-  // $locationProvider.html5Mode(true)
+// orionApp.config(['$locationProvider', '$httpProvider', '$sceProvider', '$compileProvider' , function( $locationProvider, $httpProvider, $sceProvider, $compileProvider) {
+//   delete $httpProvider.defaults.headers.common['X-Requested-With'];
+// }]);
+
+
+var orionApp = angular.module('OrionApplication', ['ngSanitize', 'truncate']);
+
+orionApp.config(['$locationProvider', '$httpProvider',  '$compileProvider' , function( $locationProvider, $httpProvider, $compileProvider) {
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
 
