@@ -44,6 +44,7 @@ orionApp.controller('ShowPostController', ['$scope', '$compile', '$location', '$
   $scope.title = 'THIS IS THE ITEM!';
   $scope.post_id = $routeParams.postId;
   $scope.$location = $location;
+  $scope.children = 'base-url'
   
   $http.get( set_base_url() + '/show/' + $scope.post_id ).success(function(data) {
     $scope.blogPost = data;
