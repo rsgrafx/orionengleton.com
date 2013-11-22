@@ -4,7 +4,7 @@
       <h2>{{ blogPost.title }}</h2>
     </header>
     
-    <!-- <div compile='body_of_post'></div> -->
+    <div compile='body_of_post'></div>
     <div ng-repeat='img in blogPost.post_images' class='large-10 small-10'>
       <img ng-src="{{img.attachment.url}}" />
     </div>
