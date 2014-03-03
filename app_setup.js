@@ -17,6 +17,14 @@ window.set_base_url = function() {
 
 var orionApp = angular.module('OrionApplication', ['ngSanitize', 'truncate']);
 
+/*
+* A wasy of accessing the app from outside this file
+* repeat this line without passing the array
+  
+  var orionApp = angular.module('OrionApplication');
+*
+*/
+
 orionApp.config(['$locationProvider', '$httpProvider',  '$compileProvider' , function( $locationProvider, $httpProvider, $compileProvider) {
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);

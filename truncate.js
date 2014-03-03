@@ -34,4 +34,10 @@ angular.module('truncate', [])
             }
             return input;
         };
+    })
+    .filter('novideo', function() {
+        return function (input, tags) {
+            if (isNaN(tags)) return input;
+         return input;
+        }
     });
